@@ -11,7 +11,7 @@ import FadeIn from './components/FadeIn'
 
 function App() {
   return (
-    <div className="bg-background text-text-primary min-h-screen">
+    <div className=" text-text-primary min-h-screen">
       <Navbar />
       <FadeIn><Hero /></FadeIn>
       <FadeIn><About /></FadeIn>

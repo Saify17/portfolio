@@ -1,6 +1,17 @@
 function Experience() {
   const experience = [
     {
+      role: 'React.js Developer Intern',
+      company: 'Ghair Mulki Software House',
+      duration: 'June 2026 – Currently',
+      points: [
+        'Studied core concepts of React.js, TailwindCSS, JavaScript and Git/GitHub',
+        'Strengthened front-end foundations in React.js, TailwindCSS, and JavaScript',
+        'Developed a responsive front-end website as part of company projects',
+        
+      ],
+    },
+    {
       role: 'Full Stack Development Training',
       company: 'Global Peace Chain',
       duration: 'Dec 2025 – March 2026',

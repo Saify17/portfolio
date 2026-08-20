@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+/* @theme {
   --color-primary-start: #7c3aed;
   --color-primary-end: #a855f7;
   --color-secondary-start: #f43f5e;
@@ -10,4 +10,40 @@
   --color-accent: #fbbf24;
   --color-text-primary: #f1f5f9;
   --color-text-muted: #94a3b8;
+} */
+
+
+/* @theme {
+  --color-primary-start: #0d9488;
+  --color-primary-end: #2dd4bf;
+  --color-secondary-start: #6366f1;
+  --color-secondary-end: #818cf8;
+  --color-background: #041014;
+  --color-surface: #0f2027;
+  --color-accent: #fbbf24;
+  --color-text-primary: #ecfeff;
+  --color-text-muted: #94a3b8;
+} */
+
+
+@theme {
+  --color-primary-start: #6366f1;
+  --color-primary-end: #a855f7;
+  --color-secondary-start: #f43f5e;
+  --color-secondary-end: #fb7185;
+  --color-background: #08070d;
+  --color-surface: #15131f;
+  --color-accent: #fbbf24;
+  --color-text-primary: #f8fafc;
+  --color-text-muted: #8b8a99;
+}
+
+body,
+#root {
+  background-color: var(--color-background);
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.15), transparent 40%),
+    radial-gradient(circle at 85% 10%, rgba(236, 72, 153, 0.12), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.1), transparent 50%);
+  background-attachment: fixed;
 }

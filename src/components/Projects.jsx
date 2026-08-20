@@ -16,14 +16,14 @@ function Projects() {
       title: 'FoodPanda Clone',
       desc: 'Full-featured food delivery app with login, cart, favorites, and search — using local storage.',
       image: foodpandaImg,
-      tags: ['JavaScript', 'Local Storage'],
+      tags: ['HTML', 'TailwindCSS', 'JavaScript', 'Local Storage'],
       link: 'https://saify17.github.io/FoodPanda/',
     },
     {
       title: 'Currency Converter',
       desc: 'Real-time currency conversion with live exchange rates via API.',
       image: currencyImg,
-      tags: ['API', 'JavaScript'],
+      tags: ['HTML', 'CSS', 'API', 'JavaScript'],
       link: 'https://saify17.github.io/currency-converter/',
     },
     {

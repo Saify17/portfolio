@@ -20,12 +20,13 @@ function Hero() {
         </p>
 
         <div className="flex gap-4 flex-wrap">
-          <button className="bg-gradient-to-r from-primary-start to-primary-end text-white px-6 py-3 rounded-lg font-semibold hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-start/40 transition-all duration-300">
+         <a href="#projects"
+          className="bg-gradient-to-r from-primary-start to-primary-end text-white px-6 py-3 rounded-lg font-semibold hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-start/40 transition-all duration-300">
             View Projects
-          </button>
-          <button className="bg-gradient-to-r from-secondary-start to-secondary-end text-white px-6 py-3 rounded-lg font-semibold hover:-translate-y-1 hover:shadow-lg hover:shadow-secondary-start/40 transition-all duration-300">
+          </a>
+          <a href="#contact" className="bg-gradient-to-r from-secondary-start to-secondary-end text-white px-6 py-3 rounded-lg font-semibold hover:-translate-y-1 hover:shadow-lg hover:shadow-secondary-start/40 transition-all duration-300">
             Get In Touch
-          </button>
+          </a>
         </div>
       </div>
     </section>
