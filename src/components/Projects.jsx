@@ -2,16 +2,38 @@ import ydaImg from '../assets/projects/yda.png'
 import foodpandaImg from '../assets/projects/foodpanda.png'
 import currencyImg from '../assets/projects/currency.png'
 import guidingzoneImg from '../assets/projects/guidingzone.png'
+import thehumankindImg from '../assets/projects/thehumankind.png'
+import shopnestImg from '../assets/projects/shopnest.png'
+import shoppImg from '../assets/projects/shopppp.png'
+
+
 
 function Projects() {
   const projects = [
+
     {
-      title: 'Youth Diplomatic Academy',
-      desc: 'Professional organization website with responsive design and modern UI/UX.',
-      image: ydaImg,
-      tags: ['HTML', 'CSS', 'Bootstrap', 'JS'],
-      link: 'https://youthdiplomaticacademy.netlify.app',
+      title: 'ShopFusion',
+      desc: "Developed a feature-rich E-commerce web application using React.js, Redux Toolkit, and AsyncThunk to fetch product data dynamically from APIs. ",
+      image: shoppImg,
+      tags: ['React.js', 'Redux Toolkit', 'REST API', 'createAsyncThunk' , 'TailwindCSS'],
+      link: 'https://shopfusin.netlify.app/',
     },
+
+     {
+      title: 'The Humankind Foundation',
+      desc: 'Responsive NGO website for Humankind Foundation built with React.js, Tailwind CSS, Redux Toolkit, Firebase, and Cloudinary.',
+      image: thehumankindImg,
+      tags: ['React.js', 'TailwindCSS', 'Firebase', 'Cloudinary', 'Redux Toolkit'],
+      link: 'https://the-humankind.web.app/',
+    },
+     {
+      title: 'Shopnest',
+      desc: 'Professional Responsive e-commerce website for built with React.js, Tailwind CSS, React Router and Redux Toolkit',
+      image: shopnestImg,
+      tags: ['React.js', 'TailwindCSS', 'React Router DOM', 'Redux Toolkit'],
+      link: 'https://saify17.github.io/Shopnest/',
+    },
+
     {
       title: 'FoodPanda Clone',
       desc: 'Full-featured food delivery app with login, cart, favorites, and search — using local storage.',
@@ -19,6 +41,16 @@ function Projects() {
       tags: ['HTML', 'TailwindCSS', 'JavaScript', 'Local Storage'],
       link: 'https://saify17.github.io/FoodPanda/',
     },
+
+        {
+      title: 'Youth Diplomatic Academy',
+      desc: 'Professional organization website with responsive design and modern UI/UX.',
+      image: ydaImg,
+      tags: ['HTML', 'CSS', 'Bootstrap', 'JS'],
+      link: 'https://youthdiplomaticacademy.netlify.app',
+    },
+
+
     {
       title: 'Currency Converter',
       desc: 'Real-time currency conversion with live exchange rates via API.',
@@ -44,7 +76,7 @@ function Projects() {
         </span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-4 md:mx-1">
         {projects.map((project) => (
           // flex + flex-col + h-full: makes every card the SAME height as its
           // tallest neighbor in the row, and stacks its content vertically
@@ -57,7 +89,7 @@ function Projects() {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover transition-transform duration-500 hover:scale-110"
+                className="w-full  md:h-78  object-cover transition-transform duration-500 hover:scale-110 "
               />
             </div>
 

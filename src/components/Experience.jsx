@@ -5,10 +5,9 @@ function Experience() {
       company: 'Ghair Mulki Software House',
       duration: 'June 2026 – Currently',
       points: [
-        'Studied core concepts of React.js, TailwindCSS, JavaScript and Git/GitHub',
-        'Strengthened front-end foundations in React.js, TailwindCSS, and JavaScript',
-        'Developed a responsive front-end website as part of company projects',
-        
+        'Built and deployed a fully responsive website for an NGO, Humankind Foundation, using React.js and Tailwind CSS to showcase their work and programs.',
+        'Developed a feature-rich E-commerce web application using React.js, Redux Toolkit, and AsyncThunk to fetch product data dynamically from APIs. Implemented user login/signup, product categorization, real-time search, smooth add-to-cart functionality, and React Router navigation.',
+        'Strengthened front-end foundations in React.js, Redux Toolkit, createAsyncThunk, REST API, TailwindCSS, and JavaScript'
       ],
     },
     {

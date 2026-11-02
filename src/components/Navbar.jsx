@@ -1,12 +1,32 @@
-import { useState } from 'react'
-// useState is a React Hook — it lets a component remember a value between renders (here, whether the mobile menu is open or closed)
+import { useState, useEffect } from 'react'   // 👈 added useEffect
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')   // 👈 new: tracks visible section
   // isMenuOpen is the current value (starts false = closed). setIsMenuOpen is the function we call to change it.
 
   const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact']
+
   // storing links as an array lets us generate them with .map() instead of writing 5 <a> tags by hand
+useEffect(() => {   // 👈 new block
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach((e) => e.isIntersecting && setActiveSection(e.target.id)),
+    { rootMargin: '-50% 0px -50% 0px' }
+  )
+  navLinks.forEach((link) => {
+    const el = document.getElementById(link.toLowerCase())
+    if (el) observer.observe(el)
+  })
+  return () => observer.disconnect()
+}, [])
+
+const linkClass = (link) =>   // 👈 new: one function decides the color for ANY link
+  `transition-colors duration-300 ${
+    link.toLowerCase() === activeSection
+      ? 'text-primary-start font-semibold'
+      : 'text-text-muted hover:text-primary-start'
+  }`
+
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-primary-start/20">
@@ -18,17 +38,17 @@ function Navbar() {
         </div>
 
         {/* DESKTOP LINKS - hidden on small screens, visible on medium+ */}
-        <div className="hidden md:flex gap-6">
-          {navLinks.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              className="text-text-muted hover:text-primary-start transition-colors duration-300"
-            >
-              {link}
-            </a>
-          ))}
-        </div>
+       <div className="hidden md:flex gap-6">
+  {navLinks.map((link) => (
+    <a
+      key={link}
+      href={`#${link.toLowerCase()}`}
+      className={linkClass(link)}   // 👈 replaced hardcoded className with linkClass(link)
+    >
+      {link}
+    </a>
+  ))}
+</div>
 
         {/* CTA BUTTON - hidden on small screens */}
         <a
@@ -47,20 +67,20 @@ function Navbar() {
       </div>
 
       {/* MOBILE MENU - only renders when isMenuOpen is true */}
-      {isMenuOpen && (
-        <div className="md:hidden flex flex-col gap-4 px-6 pb-6">
-          {navLinks.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              className="text-text-muted hover:text-primary-start"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link}
-            </a>
-          ))}
-        </div>
-      )}
+   {isMenuOpen && (
+  <div className="md:hidden flex flex-col gap-4 px-6 pb-4">
+    {navLinks.map((link) => (
+      <a
+        key={link}
+        href={`#${link.toLowerCase()}`}
+        className={linkClass(link)}
+        onClick={() => setIsMenuOpen(false)}
+      >
+        {link}
+      </a>
+    ))}
+  </div>
+)}
     </nav>
   )
 }
