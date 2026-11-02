@@ -3,7 +3,7 @@ import foodpandaImg from '../assets/projects/foodpanda.png'
 import currencyImg from '../assets/projects/currency.png'
 import guidingzoneImg from '../assets/projects/guidingzone.png'
 import thehumankindImg from '../assets/projects/thehumankind.png'
-import shopnestImg from '../assets/projects/shopnest.png'
+import shopnestImg from '../assets/projects/Shopnest.png'
 import shoppImg from '../assets/projects/shopppp.png'
 
 
