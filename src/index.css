@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-padding-top: 5rem;
+}
+
 /* @theme {
   --color-primary-start: #7c3aed;
   --color-primary-end: #a855f7;

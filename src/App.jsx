@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -10,6 +11,15 @@ import Footer from './components/Footer'
 import FadeIn from './components/FadeIn'
 
 function App() {
+  useLayoutEffect(() => {
+    const section = window.location.pathname.replace(/^\/+|\/+$/g, '') || 'home'
+    const target = document.getElementById(section)
+
+    if (target) {
+      target.scrollIntoView({ block: 'start' })
+    }
+  }, [])
+
   return (
     <div className=" text-text-primary min-h-screen">
       <Navbar />

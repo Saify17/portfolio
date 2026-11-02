@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'   // 👈 added useEffect
 
+const sectionIds = ['home', 'about', 'skills', 'services', 'projects', 'experience', 'contact']
+
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')   // 👈 new: tracks visible section
@@ -10,13 +12,20 @@ function Navbar() {
   // storing links as an array lets us generate them with .map() instead of writing 5 <a> tags by hand
 useEffect(() => {   // 👈 new block
   const observer = new IntersectionObserver(
-    (entries) => entries.forEach((e) => e.isIntersecting && setActiveSection(e.target.id)),
-    { rootMargin: '-50% 0px -50% 0px' }
-  )
-  navLinks.forEach((link) => {
-    const el = document.getElementById(link.toLowerCase())
-    if (el) observer.observe(el)
-  })
+  (entries) =>
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return
+
+      const section = entry.target.id
+      setActiveSection(section)
+      window.history.replaceState(null, '', section === 'home' ? '/' : `/${section}`)
+    }),
+  { rootMargin: '-50% 0px -50% 0px' }
+)
+sectionIds.forEach((id) => {
+  const el = document.getElementById(id)
+  if (el) observer.observe(el)
+})
   return () => observer.disconnect()
 }, [])
 
@@ -42,7 +51,7 @@ const linkClass = (link) =>   // 👈 new: one function decides the color for AN
   {navLinks.map((link) => (
     <a
       key={link}
-      href={`#${link.toLowerCase()}`}
+      href={link === 'Home' ? '/' : `/${link.toLowerCase()}`}
       className={linkClass(link)}   // 👈 replaced hardcoded className with linkClass(link)
     >
       {link}
@@ -52,7 +61,7 @@ const linkClass = (link) =>   // 👈 new: one function decides the color for AN
 
         {/* CTA BUTTON - hidden on small screens */}
         <a
-        href="#contact"
+        href="/contact"
         className="hidden md:block bg-gradient-to-r from-primary-start to-primary-end text-white px-6 py-2 rounded-lg font-semibold hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-start/40 transition-all duration-300">
   Let's Talk
 </a>
@@ -72,7 +81,7 @@ const linkClass = (link) =>   // 👈 new: one function decides the color for AN
     {navLinks.map((link) => (
       <a
         key={link}
-        href={`#${link.toLowerCase()}`}
+        href={link === 'Home' ? '/' : `/${link.toLowerCase()}`}
         className={linkClass(link)}
         onClick={() => setIsMenuOpen(false)}
       >
